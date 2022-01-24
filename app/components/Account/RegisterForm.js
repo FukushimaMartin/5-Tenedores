@@ -15,7 +15,7 @@ export default function RegisterForm(props){
     const [showPassword, setShowPassword] = useState(false);
     const [showRepeatPassword, setShowRepeatPassword] = useState(false)
     const [formData, setFormData] = useState(defaultFormValue())
-    const {loading, setLoading} = useState(false);
+    const [loading, setLoading] = useState(false);
     const navigation = useNavigation();
     
 
@@ -40,7 +40,7 @@ export default function RegisterForm(props){
             toastRef.current.show("La contraseña debe tener al menos 6 caracteres")
             //console.log("La contraseña debe tener al menos 6 caracteres")
         } else {
-            setLoading(true);
+            setLoading(false);
             //console.log("ok")
 
             //esto devuelve una promesa, entonces usamos el then
