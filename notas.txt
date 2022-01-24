@@ -1,0 +1,154 @@
+Tener instalado
+node -v
+yarn -v
+expo --version
+expo login (tenemos q tener una cuenta en expo)
+
+    
+    expo init (name app)
+nos pregunta por el template a utilizar
+    blank (javascript)
+
+config app.json
+
+- yarn
+para instalar cualquier dependecias que no tenga instalada (carpeta node_modules)
+
+(Tuve errores luego de unos días)
+Actualicé yarn, expo-cli y react a las ultimas versiones
+Actualicé nodejs a la version 14 (estable con expo-cli) para que funcione el emulador
+
+(intenté hacer esto y exploto todo, volvi a instalar todas las dependencias, me salteo esto)
+        para que deje de tirar warning en el emulador de android:
+        Actualicé @react-navigation/bottom-tabs a la version @~5.10.0
+        Actualicé @react-navigation/stack @~5.10.0
+        Actualicé @react-navigation/drawer @~5.10.0
+
+
+Dependencias
+ - Get started
+ yarn add @react-navigation/native@~5.1.5
+
+ - react navigation
+expo install react-native-gesture-handler@~1.6.0
+expo install react-native-reanimated@~1.7.0
+expo install react-native-screens@~2.2.0
+expo install react-native-safe-area-context@~0.7.3
+expo install @react-native-community/masked-view@~0.1.6
+
+ - Hello react navigation
+yarn add @react-navigation/stack@~5.2.10
+
+ - Tab navigation
+ yarn add @react-navigation/bottom-tabs@~5.2.6
+
+- React Native Elements
+yarn add react-native-elements@~1.2.7
+(tiene iconos para agregar al menu)
+
+
+-Firebase
+(nos permite olvidar un poco el backend y nos enfocamos en el frontend)
+yarn add firebase@~7.14.0
+(msj de error al ejecutar - espera una version diferente - instalamos la que nos pide)
+yarn add firebase@~8.2.3
+
+agregarlo en app.js
+
+
+- Evitar que el teclado oculte la app por completo
+yarn add react-native-keyboard-aware-scroll-view@~0.9.1
+
+
+- Lodash (tiene varias funciones, incluso matematicas)
+yarn add lodash
+- chequearemos si el tamaño de la pass es mayor a X
+
+
+- Easy Toast: para mostrar las validaciones de email y pass en la pantalla
+yarn add react-native-easy-toast@~1.2.0
+
+
+- paquete de permisos de ususario para por ejemplo ver las img del celu
+yarn add expo-permissions@~8.1.0
+12.1.1 (actualizar)
+yarn add expo-image-picker@~8.1.0
+10.2.2(actualizar)
+
+funciona pa la verga, hay que usar permission.camera en vez de camera_roll
+igual al hacer camera.status
+
+agrego para usar la funciona de camera, dado que han cambiado los paquetes y ahora cada funcion tiene su permission
+yarn add expo-camera
+
+- Expo permission
+yarn add expo-permissions@~12.1.1
+- Image Picker
+yarn add expo-image-picker@~10.2.2
+- Expo camera
+yarn add expo-camera@~12.0.3
+
+
+- Google Maps
+yarn add react-google-maps@~9.4.5
+- Maps de React yarn
+yarn add react-native-maps@~0.27.1
+- Expo Location
+yarn add expo-location@~8.1.0
+
+expo-camera - expected version: ~11.2.2 - actual version installed: 12.0.3
+ - expo-location - expected version: ~12.1.2 - actual version installed: 13.0.4
+ - firebase - expected version: 8.2.3 - actual version installed: 8.2.10
+ - react-native-maps - expected version: 0.28.0 - actual version installed: 0.27.1
+ Animated: `useNativeDriver` was not specified. This is a required option and must be explicitly set to `true` or `false`
+
+
+Para generar ID random (para subir las imagenes de los restaurantes)
+yarn add random-uuid-v4
+
+expo build:android
+generar el (apk)
+
+API
+AIzaSyDw03k_fUn1BJbeaLvTRzdIirxfXhJBgio
+
+expo fetch:android:hashes 
+generar la huella
+
+Accessing credentials for fede_fuku in project 5-tenedores
+Google Certificate Fingerprint:     B8:C6:5B:69:40:7F:09:8F:6C:40:11:ED:65:13:B9:65:CC:D0:AD:B8
+Google Certificate Hash (SHA-1):    B8C65B69407F098F6C4011ED6513B965CCD0ADB8
+Google Certificate Hash (SHA-256):  0CC2F5B3E46F5D715B2528ADA55E5DE0509ABE24099DFB9A9C58EDFE16F52BCC
+Facebook Key Hash:                  uMZbaUB/CY9sQBHtZRO5ZczQrbg=
+
+Carousel imagenes
+yarn add react-native-snap-carousel@~3.9.0
+
+Open Maps
+yarn add react-native-open-maps@~0.3.5
+
+FireSQL
+yarn add firesql@~2.0.2
+
+Cambiar el icono del proyecto
+carpeta assets -> icon.png
+
+Splash screen
+Vista principal al iniciar la app
+carpeta assets -> splash.pgn
+app.json -> splash -> backgroundColor
+(otra opcion cambiar el resizeMode por "cover")
+
+Permitir que otros descarguen la app
+https://expo.dev/@fede_fuku/5-tenedores
+instalando expo en el celular
+
+
+generar el (apk)
+  expo build:android   -> apk
+Link para descargar
+https://expo.dev/artifacts/e1c0ac56-7f55-49ba-9ec3-b2607b7c1bf9
+
+generar el (apk) para google play
+ expo build:android    -> app-bundle
+genera un archivo para subirlo a google play
