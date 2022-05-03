@@ -1,8 +1,5 @@
 import React from 'react';
-//import { useEffect  } from 'react';
 import Navigation from './app/navigation/Navigation';
-import { firebaseApp } from "./app/utils/firebase";
-//import * as firebase from "firebase";
 import { LogBox } from "react-native";
 
 //ignorando el mensaje al cargar avatar

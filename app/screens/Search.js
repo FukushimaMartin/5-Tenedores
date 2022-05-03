@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {StyleSheet, View, Text, FlatList, Image} from "react-native"
+import {StyleSheet, View, FlatList, Image} from "react-native"
 import { SearchBar, ListItem, Icon} from "react-native-elements"
 import { FireSQL } from "firesql"
 import firebase from 'firebase/app'

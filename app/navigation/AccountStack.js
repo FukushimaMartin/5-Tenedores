@@ -18,7 +18,7 @@ export default function AccountStack() {
             <Stack.Screen
                 name= "login"
                 component= {Login} 
-                options={ {title: "Inicias sesión"} }
+                options={ {title: "Iniciar sesión"} }
             />
             <Stack.Screen
                 name= "register"

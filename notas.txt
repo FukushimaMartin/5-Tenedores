@@ -23,6 +23,8 @@ Actualicé nodejs a la version 14 (estable con expo-cli) para que funcione el em
         Actualicé @react-navigation/bottom-tabs a la version @~5.10.0
         Actualicé @react-navigation/stack @~5.10.0
         Actualicé @react-navigation/drawer @~5.10.0
+(creo que esto se debe a que los bottom-tabs deben ser codeados de otra manera en la nueva version
+lo probaré con la app kf)
 
 
 Dependencias
@@ -106,21 +108,6 @@ expo-camera - expected version: ~11.2.2 - actual version installed: 12.0.3
 Para generar ID random (para subir las imagenes de los restaurantes)
 yarn add random-uuid-v4
 
-expo build:android
-generar el (apk)
-
-API
-AIzaSyDw03k_fUn1BJbeaLvTRzdIirxfXhJBgio
-
-expo fetch:android:hashes 
-generar la huella
-
-Accessing credentials for fede_fuku in project 5-tenedores
-Google Certificate Fingerprint:     B8:C6:5B:69:40:7F:09:8F:6C:40:11:ED:65:13:B9:65:CC:D0:AD:B8
-Google Certificate Hash (SHA-1):    B8C65B69407F098F6C4011ED6513B965CCD0ADB8
-Google Certificate Hash (SHA-256):  0CC2F5B3E46F5D715B2528ADA55E5DE0509ABE24099DFB9A9C58EDFE16F52BCC
-Facebook Key Hash:                  uMZbaUB/CY9sQBHtZRO5ZczQrbg=
-
 Carousel imagenes
 yarn add react-native-snap-carousel@~3.9.0
 
@@ -139,6 +126,22 @@ carpeta assets -> splash.pgn
 app.json -> splash -> backgroundColor
 (otra opcion cambiar el resizeMode por "cover")
 
+
+API
+AIzaSyDw03k_fUn1BJbeaLvTRzdIirxfXhJBgio
+
+expo fetch:android:hashes 
+generar la huella
+
+inicio = final
+Accessing credentials for fede_fuku in project 5-tenedores
+Google Certificate Fingerprint:     623 :C6:5B:69:40:7F:09:8F:6C:40:11:ED:65:13:B9:65:CC:D0:AD:B8
+Google Certificate Hash (SHA-1):    623 C65B69407F098F6C4011ED6513B965CCD0ADB8
+Google Certificate Hash (SHA-256):  0 623 2F5B3E46F5D715B2528ADA55E5DE0509ABE24099DFB9A9C58EDFE16F52BCC
+Facebook Key Hash:                  uMZbaUB/CY9sQBHtZRO5ZczQrbg=
+
+
+
 Permitir que otros descarguen la app
 https://expo.dev/@fede_fuku/5-tenedores
 instalando expo en el celular
@@ -147,7 +150,7 @@ instalando expo en el celular
 generar el (apk)
   expo build:android   -> apk
 Link para descargar
-https://expo.dev/artifacts/e1c0ac56-7f55-49ba-9ec3-b2607b7c1bf9
+https://expo.dev/artifacts/e8bc5d6a-c692-45d9-921c-7f485880477d
 
 generar el (apk) para google play
  expo build:android    -> app-bundle

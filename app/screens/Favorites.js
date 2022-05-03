@@ -4,10 +4,10 @@ import { Icon, Image, Button } from "react-native-elements";
 import { useFocusEffect } from "@react-navigation/native";
 import Toast from "react-native-easy-toast";
 
-import {firebaseApp} from "../utils/firebase";
 import firebase from "firebase";
 import "firebase/firestore";
 
+import {firebaseApp} from "../utils/firebase";
 import Loading from "../components/Loading";
 
 const db = firebase.firestore(firebaseApp);
@@ -51,8 +51,6 @@ export default function Favorites(props) {
       setReloadData(false)
     }, [userLogged, reloadData])
   )
-
- 
 
   const getDataRestaurant = (idRestaurantsArray) => {
     const arrayRestaurants = []
@@ -223,8 +221,6 @@ function Restaurant(props){
     </View>
   )
 }
-
-
 
 const styles = StyleSheet.create({
   viewNoLogged: {

@@ -7,7 +7,7 @@ import {size} from "lodash";
 import {reauthenticate} from "../../utils/api";
 
 export default function ChangePasswordForm(props){
-    const {setShowModal, toastRef} = props
+    const {setShowModal} = props
     const [showPassword, setShowPassword] = useState(false);
     const [formData, setFormData] = useState(defaultValue());
     const [error, setError] = useState({});

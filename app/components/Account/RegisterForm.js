@@ -9,121 +9,113 @@ import Loading from "../Loading";
 import {validateEmail} from "../../utils/validations"
 
 export default function RegisterForm(props){
-    //con esto tuneo los msj de logueo
-    const { toastRef } = props
-    
-    const [showPassword, setShowPassword] = useState(false);
-    const [showRepeatPassword, setShowRepeatPassword] = useState(false)
-    const [formData, setFormData] = useState(defaultFormValue())
-    const [loading, setLoading] = useState(false);
-    const navigation = useNavigation();
-    
+  //con esto tuneo los msj de logueo
+  const { toastRef } = props
+  
+  const [showPassword, setShowPassword] = useState(false);
+  const [showRepeatPassword, setShowRepeatPassword] = useState(false)
+  const [formData, setFormData] = useState(defaultFormValue())
+  const [loading, setLoading] = useState(false);
+  const navigation = useNavigation();
+  
 
-    const onSubmit = () => {
-        //console.log(formData)
-        //console.log(validateEmail(formData.email))
+  const onSubmit = () => {
+    //console.log(formData)
+    //console.log(validateEmail(formData.email))
 
-        if(
-            isEmpty(formData.email) || 
-            isEmpty(formData.password) || 
-            isEmpty(formData.repeatPassword)
-        ) {
-            //console.log("Debe completar todos los campos")
-            toastRef.current.show("Todos los campos son obligatorios")
-        } else if ( !validateEmail(formData.email) ) {
-            toastRef.current.show("El email no es correcto")
-            //console.log("El email no es correcto")
-        } else if (formData.password !== formData.repeatPassword) {
-            toastRef.current.show("Las contraseñas deben ser iguales")
-            //console.log("Las contraseñas deben ser iguales")
-        } else if (size(formData.password) < 6){
-            toastRef.current.show("La contraseña debe tener al menos 6 caracteres")
-            //console.log("La contraseña debe tener al menos 6 caracteres")
-        } else {
-            setLoading(false);
-            //console.log("ok")
-
-            //esto devuelve una promesa, entonces usamos el then
-            firebase
-                .auth()
-                .createUserWithEmailAndPassword(formData.email, formData.password)
-                .then( () => {
-                    //console.log(response)
-                    setLoading(false);
-                    //el setLoading debe ir antes, porque luego de ejecutar navega a otra seccion y ya no puede actualizar el Loading
-                    navigation.navigate("account");
-                })
-                .catch( () => {
-                    setLoading(false);
-                    //console.log(error)
-                    toastRef.current.show("Ya existe una cuenta registrada con ese email, pruebe con otro")
-                })
-        }
-        
+    if(
+      isEmpty(formData.email) || 
+      isEmpty(formData.password) || 
+      isEmpty(formData.repeatPassword)
+    ) {
+        toastRef.current.show("Todos los campos son obligatorios")
+    } else if ( !validateEmail(formData.email) ) {
+        toastRef.current.show("El email no es correcto")
+    } else if (formData.password !== formData.repeatPassword) {
+        toastRef.current.show("Las contraseñas deben ser iguales")
+    } else if (size(formData.password) < 6){
+        toastRef.current.show("La contraseña debe tener al menos 6 caracteres")
+    } else {
+        setLoading(false);
+        //esto devuelve una promesa, entonces usamos el then
+        firebase
+            .auth()
+            .createUserWithEmailAndPassword(formData.email, formData.password)
+            .then( () => {
+                setLoading(false);
+                //el setLoading debe ir antes, porque luego de ejecutar navega a otra seccion y ya no puede actualizar el Loading
+                navigation.navigate("account");
+            })
+            .catch( () => {
+                setLoading(false);
+                toastRef.current.show("Ya existe una cuenta registrada con ese email, pruebe con otro")
+            })
     }
+      
+  }
 
-    const onChange = (event, type) => {
-        //console.log(event.nativeEvent.text)
-        //setFormData({ [type]: event.nativeEvent.text})
+  const onChange = (event, type) => {
+    //console.log(event.nativeEvent.text)
+    //setFormData({ [type]: event.nativeEvent.text})
 
-        //formData nos trae un objeto, pero "...formData" nos trae las variables dentro del objeto
-        setFormData({ ...formData, [type]: event.nativeEvent.text })
-    }
+    //formData nos trae un objeto, pero "...formData" nos trae las variables dentro del objeto
+    setFormData({ ...formData, [type]: event.nativeEvent.text })
+  }
 
-    return(
-        <View style={styles.formContainer}>
-            <Input 
-                placeholder="Correo Electronico"
-                containerStyle={styles.inputForm}
-                onChange={event => onChange(event, "email")}
-                rightIcon={
-                    <Icon
-                        type="material-community"
-                        name="at"
-                        iconStyle={styles.iconRight}
-                    />
-                }
-            />
-            <Input 
-                placeholder="Contraseña"
-                containerStyle={styles.inputForm}
-                password={true}
-                secureTextEntry={showPassword ? false : true }
-                onChange={event => onChange(event, "password")}
-                rightIcon={
-                    <Icon
-                        type="material-community"
-                        name={showPassword ? "eye-off-outline" : "eye-outline"}
-                        iconStyle={styles.iconRight}
-                        onPress={ () => setShowPassword(!showPassword) }
-                    />
-                }
-            />
-            <Input 
-                placeholder="Repetir Contraseña"
-                containerStyle={styles.inputForm}
-                password={true}
-                secureTextEntry={showRepeatPassword ? false : true }
-                onChange={event => onChange(event, "repeatPassword")}
-                rightIcon={
-                    <Icon
-                        type="material-community"
-                        name={showRepeatPassword ? "eye-off-outline" : "eye-outline"}
-                        iconStyle={styles.iconRight}
-                        onPress={ () => setShowRepeatPassword(!showRepeatPassword) }
-                    />
-                }
-            />
+  return(
+      <View style={styles.formContainer}>
+          <Input 
+              placeholder="Correo Electronico"
+              containerStyle={styles.inputForm}
+              onChange={event => onChange(event, "email")}
+              rightIcon={
+                  <Icon
+                      type="material-community"
+                      name="at"
+                      iconStyle={styles.iconRight}
+                  />
+              }
+          />
+          <Input 
+              placeholder="Contraseña"
+              containerStyle={styles.inputForm}
+              password={true}
+              secureTextEntry={showPassword ? false : true }
+              onChange={event => onChange(event, "password")}
+              rightIcon={
+                  <Icon
+                      type="material-community"
+                      name={showPassword ? "eye-off-outline" : "eye-outline"}
+                      iconStyle={styles.iconRight}
+                      onPress={ () => setShowPassword(!showPassword) }
+                  />
+              }
+          />
+          <Input 
+              placeholder="Repetir Contraseña"
+              containerStyle={styles.inputForm}
+              password={true}
+              secureTextEntry={showRepeatPassword ? false : true }
+              onChange={event => onChange(event, "repeatPassword")}
+              rightIcon={
+                  <Icon
+                      type="material-community"
+                      name={showRepeatPassword ? "eye-off-outline" : "eye-outline"}
+                      iconStyle={styles.iconRight}
+                      onPress={ () => setShowRepeatPassword(!showRepeatPassword) }
+                  />
+              }
+          />
 
-            <Button
-                title="Unirse"
-                containerStyle={styles.btnContainerRegister}
-                buttonStyle={styles.btnRegister}
-                onPress={ onSubmit }
-            />
-            <Loading isVisible={loading} text="Creando cuenta" />
-        </View>
-    )
+          <Button
+              title="Unirse"
+              containerStyle={styles.btnContainerRegister}
+              buttonStyle={styles.btnRegister}
+              onPress={ onSubmit }
+          />
+          <Loading isVisible={loading} text="Creando cuenta" />
+      </View>
+  )
 }
 
 function defaultFormValue(){

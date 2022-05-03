@@ -1,10 +1,11 @@
 import React, {useState, useEffect, useRef} from 'react'
-import {View, Text} from "react-native"
+import {View} from "react-native"
 import Toast from 'react-native-easy-toast'
+
 import firebase from 'firebase/app'
+import "firebase/firestore"
 
 import {firebaseApp} from "../utils/firebase"
-import "firebase/firestore"
 import ListTopRestaurants from '../components/Ranking/ListTopRestaurants'
 
 const db = firebase.firestore(firebaseApp)

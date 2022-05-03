@@ -1,16 +1,18 @@
-import React, {useState, useEffect, useRef} from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React, {useState, useRef} from 'react'
+import { StyleSheet, View } from 'react-native'
 import { AirbnbRating, Button, Input } from "react-native-elements"
 import Toast from "react-native-easy-toast"
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
-import Loading from '../../components/Loading'
+import firebase from "firebase/app" //importamos las funciones de firebase
+//es lo mismo que poner import * as firebase from "firebase"
+import "firebase/firestore" //importamos firestore de firebase
+
 import { firebaseApp } from "../../utils/firebase"
-import firebase from "firebase/app"
-import "firebase/firestore"
+import Loading from '../../components/Loading'
 
-const db = firebase.firestore(firebaseApp)
-
+const db = firebase.firestore(firebaseApp) 
+//tomamos de firebase el firestore, le pasamos nuestras credenciales. guardamos la conexion en db
 
 export default function AddReviewRestaurant(props) {
   const {navigation, route} = props
@@ -31,7 +33,6 @@ export default function AddReviewRestaurant(props) {
     } else if (!review){
       toastRef.current.show("El comentario se encuentra vacío")
     } else {
-      // ok
       setIsLoading(true)
       const user = firebase.auth().currentUser
 
@@ -48,7 +49,7 @@ export default function AddReviewRestaurant(props) {
       db.collection("reviews")
         .add(payload)
         .then(() => {
-          // setIsLoading(false)
+          // setIsLoading(false) -> dejamos que el update se encargue de cerrar el loading
           updateRestaurant()
         })
         .catch(() => {

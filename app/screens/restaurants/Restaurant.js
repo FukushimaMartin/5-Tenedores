@@ -5,10 +5,10 @@ import { ListItem, Icon, Rating } from "react-native-elements";
 import Toast from "react-native-easy-toast";
 import { useFocusEffect } from '@react-navigation/native';
 
-import {firebaseApp} from "../../utils/firebase"
 import firebase from "firebase/app"
 import "firebase/firestore"
 
+import {firebaseApp} from "../../utils/firebase"
 import Loading from '../../components/Loading';
 import Map from '../../components/Map';
 import Carousel from '../../components/CarouselImages';
@@ -35,7 +35,8 @@ export default function Restaurant(props) {
 
   //para que un efecto se vuelva a ejecutar cuando regresamos a la screen (con navigation.goback)
   useFocusEffect(
-    useCallback(() => { //trae el restaurant de nuestra db
+    useCallback(() => { 
+      //trae el restaurant de nuestra db
       db.collection("restaurants")
         .doc(id)
         .get().then( (response) => {

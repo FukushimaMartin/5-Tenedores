@@ -7,18 +7,15 @@ import { Camera } from 'expo-camera';
 
 
 export default function InfoUser(props){
-    const { userInfo: {uid, photoURL, displayName, email},
-        toastRef,
-        setLoading,
-        setLoadingText //no me funciono colocar el loading(ej 76.)
-    } = props;
+  const { userInfo: {uid, photoURL, displayName, email},
+    toastRef,
+    setLoading,
+    setLoadingText
+  } = props;
 //    const { photoUrl } = userInfo;   (esto lo hago resumido, colocandolo arriba) de props saco el userInfo, y de userInfo saco el photoUrl
-
-    //console.log(props.userInfo)
 
     const changeAvatar = async () => {
         const resultPermissions = await Camera.requestCameraPermissionsAsync();
-        // console.log(resultPermissions)
         const resultPermissionsCamera = resultPermissions.status;
 
         if(resultPermissionsCamera === "denied"){
@@ -77,12 +74,12 @@ export default function InfoUser(props){
     return(
         <View style={styles.viewUserInfo}>
             <Avatar
-                rounded
-                size="large"
-                showEditButton
-                onEditPress={changeAvatar}
-                containerStyle={styles.userInfoAvatar}
-                source={photoURL ? {uri: photoURL} : require("../../../assets/img/avatar-default.jpg")}
+              rounded
+              size="large"
+              showEditButton
+              onEditPress={changeAvatar}
+              containerStyle={styles.userInfoAvatar}
+              source={photoURL ? {uri: photoURL} : require("../../../assets/img/avatar-default.jpg")}
             />
             <View>
                 <Text style={styles.displayName}>
