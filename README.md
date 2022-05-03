@@ -9,27 +9,28 @@ Versionamiento de código: **Git y GitHub**
 <p align="center">
     <img src="https://github.com/FukushimaMartin/5-Tenedores/blob/main/assets/img/5-tenedores-letras-icono-logo.png" height="350"/>
 </p>
-<p align="center">
+
   - [Prototipo](#Prototipo)
   - [Descarga](#Link)
   - [Instalación](#Instalación)
   - [Ejecución](#Ejecución)
   - [Documentación](#Documentación)
   - [Dependencias](#Dependencias)
-</p>
+
+***
 ***
 
 ## Prototipo de la app
 <p align="center">
-    <a href="https://partnerup.invisionapp.com/console/share/ZVXGHSR89QK/912389161"><br> Prototipo interactivo</a>
+    <a href="https://partnerup.invisionapp.com/console/share/ZVXGHSR89QK/912389161"><br> Prototipo interactivo</a>&nbsp;&nbsp;
     <img src="https://github.com/FukushimaMartin/5-Tenedores/blob/main/assets/proto/proto-home.jpg" height="350"/> &nbsp;&nbsp;
     <img src="https://github.com/FukushimaMartin/5-Tenedores/blob/main/assets/proto/proto-login.jpg" height="350"/> &nbsp;&nbsp;
     <img src="https://github.com/FukushimaMartin/5-Tenedores/blob/main/assets/proto/proto-perfil.jpg" height="350"/> &nbsp;&nbsp;
     <img src="https://github.com/FukushimaMartin/5-Tenedores/blob/main/assets/proto/proto-restos.jpg" height="350"/> &nbsp;&nbsp;
     <img src="https://github.com/FukushimaMartin/5-Tenedores/blob/main/assets/proto/proto-search.jpg" height="350"/> &nbsp;&nbsp;
     <img src="https://github.com/FukushimaMartin/5-Tenedores/blob/main/assets/proto/proto-restos.jpg" height="350"/> &nbsp;&nbsp;
-    <img src="https://github.com/FukushimaMartin/5-Tenedores/blob/main/assets/proto/proto-top.jpg" height="350"/>
-    <img src="https://github.com/FukushimaMartin/5-Tenedores/blob/main/assets/proto/proto-add.jpg" height="350"/>
+    <img src="https://github.com/FukushimaMartin/5-Tenedores/blob/main/assets/proto/proto-top.jpg" height="350"/> &nbsp;&nbsp;
+    <img src="https://github.com/FukushimaMartin/5-Tenedores/blob/main/assets/proto/proto-add.jpg" height="350"/> &nbsp;&nbsp;
 </p>
 
 # Link para el apk (en caso de que quieras bajarlo directo a un dispositivo android)
