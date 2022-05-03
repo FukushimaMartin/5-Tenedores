@@ -22,7 +22,10 @@ Versionamiento de código: **Git y GitHub**
 
 ## Prototipo de la app
 <p align="center">
-    <a href="https://partnerup.invisionapp.com/console/share/ZVXGHSR89QK/912389161"><br> Prototipo interactivo</a>&nbsp;&nbsp;
+    <a href="https://partnerup.invisionapp.com/console/share/ZVXGHSR89QK/912389161"><br> Prototipo interactivo de la app</a> &nbsp;&nbsp;
+</p>
+
+<p align="center">
     <img src="https://github.com/FukushimaMartin/5-Tenedores/blob/main/assets/proto/proto-home.jpg" height="350"/> &nbsp;&nbsp;
     <img src="https://github.com/FukushimaMartin/5-Tenedores/blob/main/assets/proto/proto-login.jpg" height="350"/> &nbsp;&nbsp;
     <img src="https://github.com/FukushimaMartin/5-Tenedores/blob/main/assets/proto/proto-perfil.jpg" height="350"/> &nbsp;&nbsp;
